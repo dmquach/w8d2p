@@ -49,9 +49,13 @@ const exponent1 = function(base, exp) {
 const exponent2 = function(base, exp) {
     if (exp === 0) return 1
     if (exp === 1) return base
+    let val;
     if (exp % 2 === 0) {
-        let val = exponent1(base, exp / 2)^2
+        val = exponent1(base, exp / 2)**2
+    } else {
+        val = exponent1(base, (exp - 1) / 2)**2
     }
+    return val * base
 }
 
-console.log(exponent2(3, 3)) // 3 * 3 * 3 * 1
+// console.log(exponent2(2, 3))
